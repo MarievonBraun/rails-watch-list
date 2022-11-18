@@ -1,5 +1,8 @@
-<div class=container>
-  <h1><%=@list.name%></h1>
+  <div class="banner" style="background-image: url(https://images.pexels.com/photos/7991582/pexels-photo-7991582.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)">
+    <div class="container">
+      <h1><%=@list.name%></h1>
+    </div>
+  </div>
 
   <ul>
     <% @list.bookmarks.each do |bookmark| %>
@@ -10,17 +13,18 @@
 
   </ul>
 
-  <div class=delete-list>
+<div class="buttons">
+  <div class="btn btn-dark">
     <%= link_to 'Delete list',
     list_path(@lists),
     data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
   </div>
 
-  <div class=add-movie>
+  <div class="btn btn-dark">
     <%= link_to 'Add a movie', new_list_bookmark_path(@list) %>
   </div>
 
-  <div class=back-to-lists>
+  <div class="btn btn-dark">
     <%= link_to 'Back to all lists', lists_path(@list) %>
   </div>
 </div>
