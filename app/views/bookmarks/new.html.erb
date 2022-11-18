@@ -1,0 +1,16 @@
+<div class=container>
+  <h4>Add a new movie bookmark:</h4>
+
+  <div class=movie-simple-form>
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.input :comment %>
+      <%= f.association :movie, collection: Movie.all %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+
+  <div class=back-to-lists>
+    <%= link_to 'Back to all lists', lists_path(@list) %>
+  </div>
+
+</div>
